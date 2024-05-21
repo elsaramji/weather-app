@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wetherapping/views/homeview.dart';
 
 class Startpage extends StatelessWidget {
   const Startpage({

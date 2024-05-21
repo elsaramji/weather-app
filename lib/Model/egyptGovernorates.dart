@@ -1,0 +1,30 @@
+class EgyptGovernorates {
+  static List<String> egyptGovernorates = [
+    'Alexandria',
+    'Giza',
+    'Qalyubia',
+    'Port Said',
+    'Suez',
+    'Dakahlia',
+    'Aswan',
+    'Assiut',
+    'Beheira',
+    'Beni Suef',
+    'Damietta',
+    'Fayoum',
+    'Gharbia',
+    'Ismailia',
+    'Kafr El Sheikh',
+    'Luxor',
+    'Matrouh',
+    'Minya',
+    'Monufia',
+    'New Valley',
+    'North Sinai',
+    'Red Sea',
+    'Sharqia',
+    'Sohag',
+    'South Sinai',
+    'Qena'
+  ];
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wetherapping/Model/weather_day_model.dart';
 
 class CityinfoContant extends StatelessWidget {
@@ -12,21 +13,23 @@ class CityinfoContant extends StatelessWidget {
       children: [
         Image.network(
           weatherCurnetModel.weathericon,
-          width: 100,
-          height: 100,
-          fit: BoxFit.fill,
-        ),
+          width: 200,
+          height: 200,
+          fit: BoxFit.cover,
+        ), // Assuming ImageStream is a Widget
         Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(weatherCurnetModel.cityName,
-                  style: const TextStyle(fontSize: 30)),
+              Text(
+                weatherCurnetModel.cityName,
+                style: GoogleFonts.cairo(fontSize: 20),
+              ),
               Text(
                   " ${weatherCurnetModel.mixTemp.toString()} | ${weatherCurnetModel.minTemp.toString()} °C",
-                  style: const TextStyle(fontSize: 30)),
-              Text("${weatherCurnetModel.datetime} AM",
-                  style: const TextStyle(fontSize: 13.5)),
+                  style: GoogleFonts.cairo(fontSize: 20)),
+              Text("${weatherCurnetModel.datetime} ",
+                  style: GoogleFonts.cairo(fontSize: 13.5)),
             ]),
       ],
     );

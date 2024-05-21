@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wetherapping/Cubit/cubits/future_weather_cubit.dart';
+import 'package:wetherapping/Services/requset.dart';
+import 'package:wetherapping/views/homeview.dart';
 import '../../Cubit/cubits/curnet_weather_cubit.dart';
 
 class RoundUserGeter extends StatelessWidget {
-  const RoundUserGeter({super.key});
-
+  RoundUserGeter({super.key});
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -30,9 +32,13 @@ class RoundUserGeter extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.lightBlue, width: 0),
         ),
       ),
-      onSubmitted: (value) {
-        BlocProvider.of<WeatherCurnetCubit>(context).getWeather(city: value);
-        Navigator.pop(context);
+      onSubmitted: (value) async {
+        await BlocProvider.of<WeatherCurnetCubit>(context)
+            .getWeather(city: value);
+        await BlocProvider.of<WeatherFutuerCubit>(context)
+            .getfutuerWeather(cityName: value);
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const Homepage()));
       },
       onChanged: (value) {},
     );

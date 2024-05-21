@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wetherapping/views/homeview.dart';
 import 'package:wetherapping/views/selectecity.dart';
 
 class UnderBar extends StatelessWidget {
@@ -13,10 +14,11 @@ class UnderBar extends StatelessWidget {
         color: const Color(0xff0B131E),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           IconButton(
-              icon: const Icon(Icons.home),
+              icon: Icon(Icons.home),
               tooltip: 'Home',
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const Homepage()));
               }),
           IconButton(
               icon: const Icon(Icons.add),

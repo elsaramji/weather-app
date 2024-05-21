@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wetherapping/Cubit/cubits/curnet_weather_cubit.dart';
-import 'package:wetherapping/views/homeview.dart';
+import 'package:wetherapping/Cubit/cubits/future_weather_cubit.dart';
 
-void main(List<String> args) {
+import 'package:wetherapping/views/homeview.dart';
+import 'package:wetherapping/widgets/Pacagepices/round_textfiled.dart';
+
+void main(List<String> args) async {
   runApp(const App());
 }
 
@@ -12,8 +15,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => WeatherCurnetCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<WeatherCurnetCubit>(
+            create: (context) => WeatherCurnetCubit()),
+        BlocProvider<WeatherFutuerCubit>(
+            create: (context) => WeatherFutuerCubit()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

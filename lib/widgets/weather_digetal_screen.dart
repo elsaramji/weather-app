@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wetherapping/Model/weather_day_model.dart';
 
 class WeatherWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class WeatherWidget extends StatelessWidget {
             children: [
               Text(
                 weatherCurnetModel.cityName,
-                style: const TextStyle(fontSize: 30),
+                style: GoogleFonts.cairo(color: Colors.white, fontSize: 25),
               ),
               Image.network(
                 weatherCurnetModel.weathericon,
@@ -27,12 +28,12 @@ class WeatherWidget extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
               Text(
-                "${weatherCurnetModel.temp}",
-                style: const TextStyle(fontSize: 30),
+                weatherCurnetModel.temp,
+                style: GoogleFonts.cairo(fontSize: 30),
               ),
               Text(
                 weatherCurnetModel.weatherDescription,
-                style: const TextStyle(fontSize: 25),
+                style: GoogleFonts.cairo(fontSize: 25),
               ),
             ]));
   }
