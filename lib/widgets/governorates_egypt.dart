@@ -3,14 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wetherapping/Cubit/cubits/curnet_weather_cubit.dart';
 import 'package:wetherapping/Model/egyptGovernorates.dart';
-import 'package:wetherapping/views/homeview.dart';
+import 'package:wetherapping/views/selecetstateviwe.dart';
 
 import '../Cubit/cubits/future_weather_cubit.dart';
 
-class EgyptGride extends StatelessWidget {
-  const EgyptGride({super.key});
+class Governorates extends StatelessWidget {
+  const Governorates({super.key});
 
   @override
+
+  /// Builds a grid of governorates in Egypt, where each governorate is represented as a clickable container.
+  /// When a governorate is tapped, it fetches the current and future weather data for that governorate and navigates to the [SelecetStateViwe] screen.
+  /// The grid is laid out with 2 columns, and each container displays the name of the governorate in a centered text.
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate:
@@ -24,8 +28,8 @@ class EgyptGride extends StatelessWidget {
               await BlocProvider.of<WeatherFutuerCubit>(context)
                   .getfutuerWeather(
                       cityName: EgyptGovernorates.egyptGovernorates[index]);
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const Homepage()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const SelecetStateViwe()));
             },
             child: Container(
               margin: const EdgeInsets.all(12.5),

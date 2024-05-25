@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wetherapping/Model/weather_day_model.dart';
 
-class WeatherWidget extends StatelessWidget {
+class CurnetWeather extends StatelessWidget {
   final WeatherCurnetModel weatherCurnetModel;
-  const WeatherWidget({super.key, required this.weatherCurnetModel});
+  const CurnetWeather({super.key, required this.weatherCurnetModel});
 
   @override
+
+  /// Builds a widget that displays the current weather information, including the city name, weather icon, temperature, and weather description.
+  ///
+  /// This widget is designed to be used within a larger UI layout, and is responsible for rendering the current weather data in a visually appealing way.
+  ///
+  /// The [weatherCurnetModel] parameter is used to provide the necessary weather data to be displayed.
   Widget build(BuildContext context) {
     return Container(
         height: 250,

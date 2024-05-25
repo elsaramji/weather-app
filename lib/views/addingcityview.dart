@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wetherapping/widgets/Pacagepices/barunderbage.dart';
-import 'package:wetherapping/widgets/Pacagepices/round_textfiled.dart';
-import 'package:wetherapping/widgets/egypt_gride.dart';
+import 'package:wetherapping/widgets/bottomcontroler.dart';
+import 'package:wetherapping/widgets/customtextfiled.dart';
+import 'package:wetherapping/widgets/governorates_egypt.dart';
 
-class Selectecity extends StatelessWidget {
-  const Selectecity({super.key});
+class Addingcityview extends StatelessWidget {
+  const Addingcityview({super.key});
 
   @override
+
+
+    /// Builds the AddingCityView widget, which is a Scaffold with a BottomControler, a SafeArea containing a Column with a CustomTextFiled, a Text widget displaying "Egypt Governorates", and a Governorates widget.
+  ///
+  /// The AddingCityView is responsible for providing the user interface for adding a new city to the application.
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: const UnderBar(),
+        bottomNavigationBar: const BottomControler(),
         body: SafeArea(
           child: Container(
             margin:
@@ -20,7 +24,7 @@ class Selectecity extends StatelessWidget {
             height: double.infinity,
             child: Column(
               children: [
-                Expanded(flex: 1, child: RoundUserGeter()),
+                Expanded(flex: 1, child: CustomTextFiled()),
                 Expanded(
                     flex: 1,
                     child: Container(
@@ -38,7 +42,7 @@ class Selectecity extends StatelessWidget {
                     )),
                 const Expanded(
                   flex: 7,
-                  child: EgyptGride(),
+                  child: Governorates(),
                 ),
               ],
             ),
